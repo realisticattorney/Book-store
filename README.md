@@ -1,6 +1,6 @@
-# React Calculator
+# React Bookstore
 
-This project is a simple Calculator tool for Math-magicians Inc using create-react-app.
+This project is a simple bookstore using create-react-app.
 
 ## Live demo
 
