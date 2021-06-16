@@ -1,11 +1,16 @@
 import { ADD_BOOK, REMOVE_BOOK } from './actions';
 
-export const addBook = (book) => ({
+export const addBook = (title, category) => ({
   type: ADD_BOOK,
-  book,
+  payload: {
+    title,
+    category,
+  },
 });
 
-export const removeBook = (book) => ({
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
-  book,
+  payload: {
+    id,
+  },
 });

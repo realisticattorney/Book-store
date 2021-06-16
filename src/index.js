@@ -4,27 +4,33 @@ import './index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './components/App';
+import reducersCombined from './reducers/index';
 
 const initialStore = {
   books: [
     {
-      author: 'Nassim Taleb',
+      id: Math.floor(Math.random() * 100),
       title: 'Skin in the game',
       category: 'Learning',
     },
     {
-      author: 'Antoine de Saint-Exupéry',
+      id: Math.floor(Math.random() * 100),
+      title: 'Skin in the game 2',
+      category: 'Learning',
+    },
+    {
+      id: Math.floor(Math.random() * 100),
       title: 'The Little Prince',
       category: 'Kids',
     },
   ],
 };
 
-const store = createStore(reducer, initialStore);
+const store = createStore(reducersCombined, initialStore);
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
