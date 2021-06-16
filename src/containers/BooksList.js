@@ -9,9 +9,7 @@ const BooksList = () => (
         <th>title</th>
         <th>category</th>
       </tr>
-         {books.map((item) => {
-            return <Book key={book.id} {...book}
-         })}
+      {books.map((item) => <Book key={book.id} {...book} />)}
     </table>
   </div>
 );
@@ -19,9 +17,7 @@ const BooksList = () => (
 const mapState = (state, ownProps) => {
   console.log(ownProps);
   const { id, amount } = ownProps;
-  return {
-
-  }
+  return {};
 };
 
 export default connect(mapState)(BooksList);
