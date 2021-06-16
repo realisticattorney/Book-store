@@ -1,25 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const BooksList = () => (
   <div>
     <table>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
+        <th>Book ID</th>
+        <th>title</th>
+        <th>category</th>
       </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr>
+         {books.map((item) => {
+            return <Book key={book.id} {...book}
+         })}
     </table>
   </div>
 );
 
-export default BooksList;
+const mapState = (state, ownProps) => {
+  console.log(ownProps);
+  const { id, amount } = ownProps;
+  return {
+
+  }
+};
+
+export default connect(mapState)(BooksList);
