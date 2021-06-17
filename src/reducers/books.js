@@ -7,6 +7,7 @@ const reducer = (state = [], action) => {
         ...state,
         {
           id: Math.floor(Math.random() * 100),
+          author: action.payload.author,
           title: action.payload.title,
           category: action.payload.category,
         },

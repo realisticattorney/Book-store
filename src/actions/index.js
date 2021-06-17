@@ -1,8 +1,9 @@
 import { ADD_BOOK, REMOVE_BOOK, CHANGE_FILTER } from './actions';
 
-export const addBook = (title, category) => ({
+export const addBook = (author, title, category) => ({
   type: ADD_BOOK,
   payload: {
+    author,
     title,
     category,
   },
