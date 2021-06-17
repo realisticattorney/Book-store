@@ -28,12 +28,8 @@ const mapState = (state) => ({
   books: state.books,
 });
 
-BooksList.defaultProps = {
-  books: [],
-};
-
 BooksList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.array),
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default connect(mapState)(BooksList);
