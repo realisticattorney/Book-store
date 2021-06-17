@@ -5,9 +5,7 @@ import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 import { removeBook, changeFilter } from '../actions/index';
 
-function BooksList({
-  books, removeBook, filter, changeFilter,
-}) {
+
   const handleRemoveBook = (e) => {
     removeBook(e.id);
   };
@@ -54,8 +52,6 @@ const mapDispatch = {
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   removeBook: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-  changeFilter: PropTypes.func.isRequired,
 };
 
 export default connect(mapState, mapDispatch)(BooksList);
