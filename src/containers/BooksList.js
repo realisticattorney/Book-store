@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-// eslint-disable-next-line import/no-cycle
 import CategoryFilter from '../components/CategoryFilter';
 import { removeBook, changeFilter } from '../actions/index';
 
-// eslint-disable-next-line react/prop-types
 function BooksList({
   books, removeBook, filter, changeFilter,
 }) {
