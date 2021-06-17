@@ -33,11 +33,22 @@ const BooksForm = ({ addBook }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      Title:
-      <input type="text" id="title" onChange={handleChange} value={title} />
-      Categories:
-      <select onChange={handleChange} value={category}>
+    <form onSubmit={handleSubmit} className="book-form">
+      <input
+        name="author"
+        type="text"
+        onChange={handleChange}
+        placeholder="Author Name"
+        required
+      />
+      <input
+        name="title"
+        type="text"
+        onChange={handleChange}
+        placeholder="Book Title"
+        required
+      />
+      <select onChange={handleChange} value={category} className="select-tag">
         {categories.map((category) => (
           <option key={category}>{category}</option>
         ))}

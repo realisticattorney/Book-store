@@ -15,20 +15,16 @@ function BooksList({
   const filteredBooks = filter !== 'All' ? books.filter((book) => book.category === filter) : books;
 
   return (
-    <div>
-      <h2>Books List</h2>
-      <CategoryFilter
-        handleFilterChange={(e) => changeFilter(e.target.value)}
-      />
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
+    <>
+      <nav className="header">
+        <h1 className="book-app">BOOKSTORE CMS</h1>
+        <p className="booklist-nav">Books</p>
+        <CategoryFilter
+          handleFilterChange={(e) => changeFilter(e.target.value)}
+        />
+      </nav>
+      <div>
+        <div className="books-cms">
           {filteredBooks.map((book) => (
             <Book
               key={book.id}
@@ -36,9 +32,9 @@ function BooksList({
               handleRemoveBook={handleRemoveBook}
             />
           ))}
-        </tbody>
-      </table>
-    </div>
+        </div>
+      </div>
+    </>
   );
 }
 const mapState = (state) => ({
