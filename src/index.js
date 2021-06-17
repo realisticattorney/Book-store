@@ -7,6 +7,16 @@ import App from './components/App';
 import reducersCombined from './reducers/index';
 
 const initialStore = {
+  filter: [
+    'All',
+    'Action',
+    'Biography',
+    'History',
+    'Horror',
+    'Kids',
+    'Learning',
+    'Sci-Fi',
+  ],
   books: [
     {
       id: Math.floor(Math.random() * 100),
