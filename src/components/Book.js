@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import graph from '../assets/graph.png';
 
 function Book({ book, handleRemoveBook }) {
   const { author, title, category } = book;
@@ -22,7 +23,9 @@ function Book({ book, handleRemoveBook }) {
         </div>
       </div>
       <div className="rect">
-        <div className="circle">{/* <img src={completed} alt="Logo" /> */}</div>
+        <div className="circle">
+          <img src={graph} alt="Logo" />
+        </div>
       </div>
       <div className="hr" />
       <div className="update">

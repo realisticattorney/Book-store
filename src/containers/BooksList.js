@@ -17,8 +17,8 @@ function BooksList({
   return (
     <>
       <nav className="header">
-        <h1 className="book-app">BOOKSTORE CMS</h1>
-        <p className="booklist-nav">Books</p>
+        <h1 className="book-app">Bookstore CMS</h1>
+        <p className="booklist-nav">BOOKS</p>
         <CategoryFilter
           handleFilterChange={(e) => changeFilter(e.target.value)}
         />
