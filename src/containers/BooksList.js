@@ -3,12 +3,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { removeBook } from '../actions/index';
+// eslint-disable-next-line import/no-cycle
+import CategoryFilter from '../components/CategoryFilter';
+import { removeBook, changeFilter } from '../actions/index';
 
 // eslint-disable-next-line react/prop-types
 function BooksList({ books, removeBook }) {
   const handleRemoveBook = (e) => {
     removeBook(e.id);
+  };
+
+  const handleFilterChange = (e) => {
+    changeFilter(e.category);
   };
 
   return (
@@ -32,6 +38,7 @@ function BooksList({ books, removeBook }) {
           ))}
         </tbody>
       </table>
+      <CategoryFilter handleFilterChange={handleFilterChange} />
     </div>
   );
 }
