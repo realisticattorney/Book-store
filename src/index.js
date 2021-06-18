@@ -13,16 +13,19 @@ const initialStore = {
       id: Math.floor(Math.random() * 100),
       title: 'Skin in the game',
       category: 'Learning',
+      author: 'Nassim Taleb',
     },
     {
       id: Math.floor(Math.random() * 100),
       title: 'Skin in the game 2',
       category: 'Learning',
+      author: 'Nassim Taleb',
     },
     {
       id: Math.floor(Math.random() * 100),
       title: 'The Little Prince',
       category: 'Kids',
+      author: 'Saint-Exupery',
     },
   ],
 };

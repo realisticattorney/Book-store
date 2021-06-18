@@ -15,11 +15,14 @@ const BooksForm = ({ addBook }) => {
   ];
 
   const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('Action');
 
   const handleChange = (e) => {
     if (e.target.id === 'title') {
       setTitle(e.target.value);
+    } else if (e.target.id === 'author') {
+      setAuthor(e.target.value);
     } else {
       setCategory(e.target.value);
     }
@@ -27,17 +30,33 @@ const BooksForm = ({ addBook }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBook(title, category);
+    addBook(author, title, category);
     setTitle('');
+    setAuthor('');
     setCategory('Action');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      Title:
-      <input type="text" id="title" onChange={handleChange} value={title} />
-      Categories:
-      <select onChange={handleChange} value={category}>
+    <form onSubmit={handleSubmit} className="book-form">
+      <input
+        name="author"
+        id="author"
+        type="text"
+        value={author}
+        onChange={handleChange}
+        placeholder="Author Name"
+        required
+      />
+      <input
+        id="title"
+        name="title"
+        type="text"
+        value={title}
+        onChange={handleChange}
+        placeholder="Book Title"
+        required
+      />
+      <select onChange={handleChange} value={category} className="select-tag">
         {categories.map((category) => (
           <option key={category}>{category}</option>
         ))}

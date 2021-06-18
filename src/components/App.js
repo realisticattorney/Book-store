@@ -6,6 +6,8 @@ function App() {
   return (
     <div>
       <BooksList />
+      <hr className="padding" />
+      <h3 className="h3">Add New Book</h3>
       <BooksForm />
     </div>
   );
